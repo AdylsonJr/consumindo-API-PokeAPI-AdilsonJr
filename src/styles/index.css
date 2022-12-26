@@ -1,1 +1,118 @@
-/* Monte sua estilização aqui */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
+
+:root{
+    --color-black1: #000000;
+    --color-black2: #343A40;
+    --color-grey1: #CED4DA;
+    --color-grey2: #DEE2E6;
+    --color-blue: #4C6EF5;
+}
+
+body{
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: var(--color-black1);
+    margin: 0 15px;
+}
+
+header{
+    display: flex;
+    padding: 1rem 0rem;
+    margin-bottom: 45px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.search > input{
+    width: 80%;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--color-black2);
+    border: var(--color-black2);
+    height: 52px;
+    color: var(--color-grey1)
+}
+
+.search > button{
+    width: 20%;
+    background-color: var(--color-blue);
+    border-radius: 8px;
+    border: var(--color-blue);
+}
+
+h1{
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 60px;
+    color: var(--color-grey2);
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.loading{
+    display: flex;
+    justify-content: center;
+}
+
+.hidden{
+    display: none;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px var(--color-black1) solid;
+    border-radius: 8px;
+    color: var(--color-grey1);
+    background-color: var(--color-black2);
+}
+
+li > h2{
+    font-size: 20px;
+}
+
+@media (min-width: 768px){
+    
+    body{
+        margin: 3rem;
+    }
+
+    header{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    ul{
+        align-items: center;
+    }
+
+    li{
+        min-width: 100%;
+    }
+
+    .search{
+        justify-content: flex-end;
+    }
+
+    .search > input{
+        max-width: 15rem;
+    }
+
+    .search > button{
+        max-width: 4rem;
+    }
+    
+}
