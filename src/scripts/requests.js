@@ -1,9 +1,7 @@
-/* Monte a lógica das requisições aqui */
-// requests.js
+
 
 async function consomePokeAPI() {
-    // const loading = document.querySelector('.loading')
-
+    
     const pokemonsDaAPI = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1020', {
         method: "GET",
         "content-type" : "application/json"
@@ -14,11 +12,27 @@ async function consomePokeAPI() {
     .catch(
         error => console.log(error)
       )
-    
-    // loading.classList.add('hidden')
-    
+     
 
     return pokemonsDaAPI
+}
+
+async function searchPokemon(){
+
+    const inputTag = document.querySelector("input")
+
+    const searchedPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${inputTag.value}`, {
+        method: "GET",
+        "content-type" : "application/json"
+    })
+    .then(response => {
+            return response.json()
+    })
+    .catch(
+        error => console.log(error),
+      )
+
+    return searchedPokemon
 }
 
 
