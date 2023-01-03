@@ -2,6 +2,7 @@
 async function renderizaPokemons() {
     const ulTag = document.querySelector('ul')
     const liTag = createLoading()
+    
 
     ulTag.append(liTag)
 
@@ -15,6 +16,7 @@ async function renderizaPokemons() {
 
         
         const card = createCard(numeroNaPokedex, pokemon.name)
+
         
         
         setTimeout(()=>{
@@ -28,6 +30,7 @@ async function renderizaPokemons() {
         buttonTag.addEventListener("click", async()=>{
             const ulTag = document.querySelector('ul')
             const liTag = createLoading()
+            
 
             if(inputTag.value == ""){
                 setTimeout(()=>{
@@ -45,8 +48,9 @@ async function renderizaPokemons() {
             
             setTimeout(()=>{
                 ulTag.append(searchCard)}, 2000)
+
             })
-        
+           
 
 function createSearchedCard(search){
     const liTag = document.createElement("li")
@@ -68,6 +72,19 @@ function createLoading(){
     
     tagLi.classList.add("loading")
     tagP.innerText = "Carregando..."
+    
+    tagLi.appendChild(tagP)
+    
+    return tagLi
+        
+}
+
+function createUnsearch(){
+    const tagLi = document.createElement("li")
+    const tagP = document.createElement("p")
+    
+    tagLi.classList.add("not_found")
+    tagP.innerText = "Pokémon não encontrado :("
     
     tagLi.appendChild(tagP)
     

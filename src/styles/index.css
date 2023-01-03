@@ -64,6 +64,12 @@ ul{
 .loading{
     display: flex;
     justify-content: center;
+    font-size: xx-large;
+}
+
+#not_found{
+    display: flex;
+    justify-content: center;
 }
 
 .hidden{
